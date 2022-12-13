@@ -32,7 +32,11 @@ async function startEc2Instance(label, githubRegistrationToken) {
   const ec2 = new AWS.EC2();
 
   const userData = buildUserDataScript(githubRegistrationToken, label);
-
+  if (config.input.useSpotInstances) {
+    params.InstanceMarketOptions = {
+      MarketType: 'spot'
+    };
+  }
   const params = {
     ImageId: config.input.ec2ImageId,
     InstanceType: config.input.ec2InstanceType,
