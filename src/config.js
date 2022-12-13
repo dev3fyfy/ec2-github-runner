@@ -15,6 +15,7 @@ class Config {
       iamRoleName: core.getInput('iam-role-name'),
       runnerHomeDir: core.getInput('runner-home-dir'),
       blockDeviceMappings: JSON.parse(core.getInput('block-device-mappings')),
+      useSpotInstances: core.getBooleanInput('use-spot-instances'),      
     };
 
     const tags = JSON.parse(core.getInput('aws-resource-tags'));
