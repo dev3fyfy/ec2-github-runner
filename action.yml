@@ -70,7 +70,7 @@ inputs:
   use-spot-instances:
     description: >-
       Use spot instances for cost savings?
-    default: false
+    default: true
     required: false    
   runner-home-dir:
     description: >-
